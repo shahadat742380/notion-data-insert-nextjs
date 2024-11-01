@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Client } from "@notionhq/client";
 import { NextResponse } from "next/server";
 
@@ -22,8 +23,9 @@ export async function GET() {
 
     // Map through each result to format data in plain text
     const users = query.results.map((page) => {
+
       // @ts-ignore
-      const properties = page.properties;
+      const properties = page?.properties;
 
       // Extract plain text from each property
       const name = properties.Name?.title[0]?.plain_text || "No Name";
