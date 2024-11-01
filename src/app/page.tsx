@@ -21,7 +21,7 @@ export default function Home() {
       });
 
       if (res.ok) {
-        setStatus("Data added successfully!");
+        setStatus("Data added successfully in Notion...!");
         setName("");
         setEmail("");
         setPhone("");
@@ -37,7 +37,7 @@ export default function Home() {
 
   return (
     <div className="py-20">
-      <div className="pb-5">{status && <p className="text-2xl text-center">{status}</p>}</div>
+     
       <form
         onSubmit={handleSubmit}
         className="space-y-4 max-w-md mx-auto p-10 border "
@@ -91,6 +91,10 @@ export default function Home() {
           Submit
         </button>
       </form>
+
+      <div className="pt-10">
+        {status && <p className="text-2xl text-center font-semibold text-green-500">{status}</p>}
+      </div>
     </div>
   );
 }
